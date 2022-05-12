@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
 @import "colors";
 @import "SearchPokemon";
+@import "Header";
+@import "Footer";
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Teko', sans-serif;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
