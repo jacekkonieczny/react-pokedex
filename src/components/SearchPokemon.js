@@ -5,7 +5,7 @@ function SearchPokemon() {
 
     return (
         <div className="search-container">
-            <input className="search-input" type="text" placeholder="Search"/>
+            <input className="search-input" type="text" placeholder="Search for pokemon..."/>
 
             <h2 className="search-info">Filter by type</h2>
             <div className="type-button-container">

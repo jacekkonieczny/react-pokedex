@@ -1,0 +1,23 @@
+.page-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ee1515;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 0.7rem;
+  margin-top: auto;
+
+  .footer-info {
+    font-size: 2rem;
+    color: white;
+
+    .pokeapi-link {
+      color: white;
+
+      &:hover {
+        color: #020202;
+      }
+    }
+  }
+}
