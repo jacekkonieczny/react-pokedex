@@ -17,74 +17,29 @@ $dragon-type-color: #6F35FC;
 $dark-type-color: #705746;
 $fairy-type-color: #D685AD;
 
-.normal {
-  background-color: $normal-type-color;
-}
+$type-colors: (
+  normal: $normal-type-color,
+  fire: $fire-type-color,
+  water: $water-type-color,
+  grass: $grass-type-color,
+  flying: $flying-type-color,
+  fighting: $fighting-type-color,
+  poison: $poison-type-color,
+  electric: $electric-type-color,
+  ground: $ground-type-color,
+  rock: $rock-type-color,
+  psychic: $psychic-type-color,
+  ice: $ice-type-color,
+  bug: $bug-type-color,
+  ghost: $ghost-type-color,
+  steel: $steel-type-color,
+  dragon: $dragon-type-color,
+  dark: $dark-type-color,
+  fairy: $fairy-type-color
+);
 
-.fire {
-  background-color: $fire-type-color;
-}
-
-.water {
-  background-color: $water-type-color;
-}
-
-.grass {
-  background-color: $grass-type-color;
-}
-
-.flying {
-  background-color: $flying-type-color;
-}
-
-.fighting {
-  background-color: $fighting-type-color;
-}
-
-.poison {
-  background-color: $poison-type-color;
-}
-
-.electric {
-  background-color: $electric-type-color;
-}
-
-.ground {
-  background-color: $ground-type-color;
-}
-
-.rock {
-  background-color: $rock-type-color;
-}
-
-.psychic {
-  background-color: $psychic-type-color;
-}
-
-.ice {
-  background-color: $ice-type-color;
-}
-
-.bug {
-  background-color: $bug-type-color;
-}
-
-.ghost {
-  background-color: $ghost-type-color;
-}
-
-.steel {
-  background-color: $steel-type-color;
-}
-
-.dragon {
-  background-color: $dragon-type-color;
-}
-
-.dark {
-  background-color: $dark-type-color;
-}
-
-.fairy {
-  background-color: $fairy-type-color;
+@each $type, $color in $type-colors {
+  .#{$type} {
+    background-color: $color;
+  }
 }
