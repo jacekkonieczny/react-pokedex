@@ -2,7 +2,7 @@ import SearchPokemon from "./components/SearchPokemon";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./scss/App.scss"
-import PokemonCard from "./components/PokemonCard";
+import PokemonList from "./components/PokemonList";
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
         <Header />
         <SearchPokemon />
-        <PokemonCard />
+        <PokemonList />
 
         <Footer />
     </div>
