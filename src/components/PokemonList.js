@@ -7,7 +7,8 @@ function PokemonList() {
     const [pokemonData, setPokemonData] = useState([]);
     const initialUrl = "https://pokeapi.co/api/v2/pokemon?limit=300";
     const [loading, setLoading] = useState(true);
-    const [query, setQuery] = useState("");
+    const [searchQuery, setSearchQuery] = useState("");
+    const [filterQuery, setFilterQuery] = useState("");
 
     useEffect(() => {
         async function fetchData() {
@@ -25,27 +26,31 @@ function PokemonList() {
         }))
         setPokemonData(pokemonArray);
     }
+    console.log(pokemonData);
 
-    const renderPokemonsList = () => {
-        const pokemonsList = [];
+    const renderPokemonList = () => {
+        const pokemonList = [];
 
         pokemonData.forEach((pokemon) => {
-            if (!pokemon.name.includes(query)) {
+            if (!pokemon.name.includes(searchQuery)) {
+                return;
+            }
+            if (!pokemon.types[0].type.name.includes(filterQuery)) {
                 return;
             }
 
-            pokemonsList.push(<PokemonCard key={pokemon.name} pokemon={pokemon} />);
+            pokemonList.push(<PokemonCard key={pokemon.name} pokemon={pokemon} />);
         });
 
-        return pokemonsList;
+        return pokemonList;
     };
 
     return (
         <>
-            <SearchPokemon getQuery={(q) => setQuery(q)}/>
+            <SearchPokemon getFilterQuery={(q) => setFilterQuery(q)} getSearchQuery={(q) => setSearchQuery(q)}/>
             <div className="pokemon-list">
                 {loading ? <h1>Loading</h1> :
-                renderPokemonsList()}
+                renderPokemonList()}
             </div>
         </>
     );
