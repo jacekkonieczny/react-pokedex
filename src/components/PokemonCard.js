@@ -1,17 +1,20 @@
 import React from 'react';
 
-function PokemonCard(props) {
+function PokemonCard({pokemon}) {
     return (
         <div className="pokemon-card">
-            <div className="normal pokemon-image">
-                <span className="id-information">#132</span>
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg" />
+            <div className={`${pokemon.types[0].type.name} pokemon-image`}>
+                <span className="id-information">#{("00" + pokemon.id).slice(-3)}</span>
+                <img src={pokemon.sprites.other.dream_world.front_default} alt={`${pokemon.name} image`} />
             </div>
             <div className="pokemon-information">
-                <span className="name-information">Ditto</span>
+                <span className="name-information">{pokemon.name}</span>
                 <div className="types-information">
-                    <div className="grass type">grass</div>
-                    <div className="poison type">posion</div>
+                    {pokemon.types.map(type => {
+                        return (
+                            <div className={`${type.type.name} type`} >{type.type.name}</div>
+                        )
+                    })}
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ function SearchPokemon() {
             <h2 className="search-info">Filter by type</h2>
             <div className="type-button-container">
                 {pokemonTypes.map((type) => (
-                    <button className={`${type} filter-button`}>{type}</button>
+                    <button className={`${type} filter-button`} key={type}>{type}</button>
                 ))}
             </div>
         </div>
