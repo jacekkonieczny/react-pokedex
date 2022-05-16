@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {getAllPokemon, getPokemon} from "../services/api";
 import PokemonCard from "./PokemonCard";
+import SearchPokemon from "./SearchPokemon";
 
 function PokemonList() {
     const [pokemonData, setPokemonData] = useState([]);
     const initialUrl = "https://pokeapi.co/api/v2/pokemon?limit=300";
     const [loading, setLoading] = useState(true);
+    const [query, setQuery] = useState("");
 
     useEffect(() => {
         async function fetchData() {
@@ -23,15 +25,29 @@ function PokemonList() {
         }))
         setPokemonData(pokemonArray);
     }
-    console.log(pokemonData);
+
+    const renderPokemonsList = () => {
+        const pokemonsList = [];
+
+        pokemonData.forEach((pokemon) => {
+            if (!pokemon.name.includes(query)) {
+                return;
+            }
+
+            pokemonsList.push(<PokemonCard key={pokemon.name} pokemon={pokemon} />);
+        });
+
+        return pokemonsList;
+    };
 
     return (
-        <div className="pokemon-list">
-            {loading ? <h1>Loading</h1> :
-            pokemonData.map((pokemon, index) => {
-                return <PokemonCard pokemon={pokemon} key={index} />
-            })}
-        </div>
+        <>
+            <SearchPokemon getQuery={(q) => setQuery(q)}/>
+            <div className="pokemon-list">
+                {loading ? <h1>Loading</h1> :
+                renderPokemonsList()}
+            </div>
+        </>
     );
 }
 

@@ -9,7 +9,6 @@ function App() {
   return (
     <div className="App">
         <Header />
-        <SearchPokemon />
         <PokemonList />
 
         <Footer />
