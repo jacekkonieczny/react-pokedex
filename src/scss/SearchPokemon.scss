@@ -41,6 +41,9 @@
     .filter-button {
       height: 2.5rem;
       width: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: none;
       border-radius: 50px;
       color: white;
