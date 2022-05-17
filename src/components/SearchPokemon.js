@@ -1,16 +1,36 @@
 import React, {useState} from 'react';
 
-function SearchPokemon({getSearchQuery, getFilterQuery}) {
+function SearchPokemon({getSearchQuery, getTypeQuery}) {
     const pokemonTypes = ["normal", "fire", "water", "grass", "flying", "fighting", "poison", "electric", "ground", "rock", "psychic", "ice", "bug", "ghost", "steel", "dragon", "dark", "fairy"];
 
     const [keyWord, setKeyWord] = useState("");
+    const [typeFilter, setTypeFilter] = useState("");
 
     function handleSearchChange(q) {
         setKeyWord(q);
         getSearchQuery(q);
     }
-    function handleFilterChange(q) {
-        getFilterQuery(q)
+    function handleTypeChange(q) {
+        setTypeFilter(q);
+        getTypeQuery(q);
+    }
+    function renderActiveSearchFilter() {
+        if (keyWord.length > 0) {
+            return (
+                <div className="active-search-filter"
+                     onClick={() => handleSearchChange("")}
+                ><i className="fa-solid fa-x"/>{keyWord}</div>
+            )
+        }
+    }
+    function renderActiveTypeFilter() {
+        if (typeFilter.length > 0) {
+            return (
+                <div className={`active-type-filter ${typeFilter}`}
+                     onClick={() => handleTypeChange("")}
+                ><i className="fa-solid fa-x"/>{typeFilter}</div>
+            )
+        }
     }
 
     return (
@@ -27,9 +47,14 @@ function SearchPokemon({getSearchQuery, getFilterQuery}) {
                     <button className={`${type} filter-button`}
                             key={type}
                             value={type}
-                            onClick={(event => handleFilterChange(event.currentTarget.value))}
+                            onClick={(event => handleTypeChange(event.currentTarget.value))}
                     >{type}</button>
                 ))}
+            </div>
+            <div className="active-filters-container">
+                <span className="active-filters-info">Active filters:</span>
+                {renderActiveSearchFilter()}
+                {renderActiveTypeFilter()}
             </div>
         </div>
     );

@@ -10,21 +10,21 @@
     text-align: center;
     font-size: 2rem;
     font-weight: normal;
-    border-top: 1px solid #dedede;
-    border-bottom: 1px solid #dedede;
+    border-top: 1px solid $filter-gray-color;
+    border-bottom: 1px solid $filter-gray-color;
     padding: 0.5rem 0 0.5rem 0;
   }
 
   .search-input {
     width: 100%;
     font-size: 1.5rem;
-    background-color: #dedede;
+    background-color: $filter-gray-color;
     border: none;
     border-radius: 10px;
     padding: 0.2rem 1rem;
 
     &::placeholder {
-      color: transparentize(#020202, 0.5);
+      color: transparentize($accent-black-color, 0.5);
     }
 
     &:focus {
@@ -54,6 +54,46 @@
       cursor: pointer;
     }
 
+  }
+
+  .active-filters-container {
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid $filter-gray-color;
+    padding: 0.5rem 0 0.5rem 0;
+
+    .active-filters-info {
+      font-size: 1.5rem;
+    }
+
+    .active-search-filter {
+      padding: 0.250rem 0.5rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      background-color: $filter-gray-color;
+      cursor: pointer;
+
+      i {
+        font-size: 0.6rem;
+        padding-right: 0.5rem;
+      }
+    }
+
+    .active-type-filter {
+      padding: 0.250rem 0.5rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+
+      i {
+        font-size: 0.6rem;
+        padding-right: 0.5rem;
+      }
+    }
   }
 
 }
