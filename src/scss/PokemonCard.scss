@@ -3,7 +3,7 @@
   width: 20rem;
   margin: 2rem;
   border-radius: 30px;
-  box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 0 $shadow-color;
   transition: transform .2s;
 
   &:hover {
@@ -24,7 +24,7 @@
     .id-information {
       font-size: 5rem;
       line-height: 5rem;
-      color: rgba(0, 0, 0, 0.5);
+      color: transparentize($accent-black-color, 0.5);
     }
 
     img {

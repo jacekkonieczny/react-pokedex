@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ee1515;
+  background-color: $main-color;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding: 0.7rem;
@@ -16,7 +16,7 @@
       color: white;
 
       &:hover {
-        color: #020202;
+        color: $accent-black-color;
       }
     }
   }

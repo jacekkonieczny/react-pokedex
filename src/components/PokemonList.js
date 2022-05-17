@@ -5,10 +5,10 @@ import SearchPokemon from "./SearchPokemon";
 
 function PokemonList() {
     const [pokemonData, setPokemonData] = useState([]);
-    const initialUrl = "https://pokeapi.co/api/v2/pokemon?limit=300";
+    const initialUrl = "https://pokeapi.co/api/v2/pokemon?limit=600";
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState("");
-    const [filterQuery, setFilterQuery] = useState("");
+    const [typeQuery, setTypeQuery] = useState("");
 
     useEffect(() => {
         async function fetchData() {
@@ -35,7 +35,7 @@ function PokemonList() {
             if (!pokemon.name.includes(searchQuery)) {
                 return;
             }
-            if (!pokemon.types[0].type.name.includes(filterQuery)) {
+            if (!pokemon.types[0].type.name.includes(typeQuery)) {
                 return;
             }
 
@@ -47,7 +47,7 @@ function PokemonList() {
 
     return (
         <>
-            <SearchPokemon getFilterQuery={(q) => setFilterQuery(q)} getSearchQuery={(q) => setSearchQuery(q)}/>
+            <SearchPokemon getTypeQuery={(q) => setTypeQuery(q)} getSearchQuery={(q) => setSearchQuery(q)}/>
             <div className="pokemon-list">
                 {loading ? <h1>Loading</h1> :
                 renderPokemonList()}
