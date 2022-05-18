@@ -5,7 +5,7 @@ import SearchPokemon from "./SearchPokemon";
 
 function PokemonList() {
     const [pokemonData, setPokemonData] = useState([]);
-    const initialUrl = "https://pokeapi.co/api/v2/pokemon?limit=600";
+    const initialUrl = "https://pokeapi.co/api/v2/pokemon?limit=151";
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState("");
     const [typeQuery, setTypeQuery] = useState("");
@@ -26,7 +26,8 @@ function PokemonList() {
         }))
         setPokemonData(pokemonArray);
     }
-    console.log(pokemonData);
+
+    console.log(pokemonData)
 
     const renderPokemonList = () => {
         const pokemonList = [];
@@ -39,7 +40,7 @@ function PokemonList() {
                 return;
             }
 
-            pokemonList.push(<PokemonCard key={pokemon.name} pokemon={pokemon} />);
+            pokemonList.push(<PokemonCard key={pokemon.id} pokemon={pokemon} />);
         });
 
         return pokemonList;

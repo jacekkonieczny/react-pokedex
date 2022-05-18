@@ -1,0 +1,25 @@
+.pokemon-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .pokemon-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    span {
+      font-size: 2rem;
+    }
+
+    .pokemon-abilities {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .pokemon-types {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}

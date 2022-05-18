@@ -5,6 +5,7 @@
 @import "Footer";
 @import "PokemonCard";
 @import "PokemonList";
+@import "PokemonDetails";
 
 * {
   box-sizing: border-box;
@@ -17,4 +18,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+#root {
+ min-height: 100vh;
 }
