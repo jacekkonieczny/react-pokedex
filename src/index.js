@@ -18,7 +18,7 @@ root.render(
   <Router>
       <Routes>
           <Route path="/react-pokedex" element={<App func={pull_data} />} />
-          <Route path="/:pokemonId" element={<PokemonDetails />} />
+          <Route path="/react-pokedex/:pokemonId" element={<PokemonDetails />} />
       </Routes>
   </Router>
 );
