@@ -17,7 +17,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
       <Routes>
-          <Route path="/" element={<App func={pull_data} />} />
+          <Route path="/react-pokedex" element={<App func={pull_data} />} />
           <Route path="/:pokemonId" element={<PokemonDetails />} />
       </Routes>
   </Router>
