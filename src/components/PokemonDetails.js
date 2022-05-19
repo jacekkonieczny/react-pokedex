@@ -36,6 +36,7 @@ function PokemonDetails() {
             {loading ? <h1>Loading</h1> : (
             <div className="pokemon-details">
                 <div className="pokemon-info-section">
+                    <span>NAME: {pokemon.name}</span>
                     <span>ID: #{("00" + pokemon.id).slice(-3)}</span>
                     <span>HEIGHT: {pokemon.height}</span>
                     <span>WEIGHT: {pokemon.weight}</span>
@@ -63,7 +64,7 @@ function PokemonDetails() {
                     {pokemon.stats.map(stat => {
                         return (
                             <div className="stat-info">
-                                <span>{stat.stat.name}:</span>
+                                <span>{stat.stat.name}: </span>
                                 <div className="progress-bar">
                                     <span>{`${stat.base_stat} / 100`}</span>
                                     <progress value={stat.base_stat / 100 } />
