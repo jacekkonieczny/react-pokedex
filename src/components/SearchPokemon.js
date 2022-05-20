@@ -24,7 +24,7 @@ function SearchPokemon({getSearchQuery, getTypeQuery}) {
         }
     }
     function renderActiveTypeFilter() {
-        if (typeFilter.length > 0) {
+        if (typeFilter.length) {
             return (
                 <div className={`active-type-filter ${typeFilter}`}
                      onClick={() => handleTypeChange("")}
