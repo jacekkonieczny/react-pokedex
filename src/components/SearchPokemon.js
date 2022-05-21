@@ -8,7 +8,7 @@ function SearchPokemon({getSearchQuery, getTypeQuery}) {
 
     function handleSearchChange(q) {
         setKeyWord(q);
-        getSearchQuery(q);
+        getSearchQuery(q.toLowerCase());
     }
     function handleTypeChange(q) {
         setTypeFilter(q);
@@ -37,7 +37,7 @@ function SearchPokemon({getSearchQuery, getTypeQuery}) {
         <div className="search-container">
             <input className="search-input"
                    type="text"
-                   placeholder="Search for pokemon..."
+                   placeholder="Search for a pokemon..."
                    value={keyWord}
                    onChange={(event => handleSearchChange(event.target.value))}/>
 

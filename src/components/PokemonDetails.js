@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import Header from "./Header";
 import {getPokemon} from "../services/api";
+import Footer from "./Footer";
 
 function PokemonDetails() {
     let {pokemonId} = useParams();
@@ -57,6 +58,7 @@ function PokemonDetails() {
                 </div>
             </div>
                 )}
+            <Footer />
         </>
     );
 }
