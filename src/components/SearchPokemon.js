@@ -8,7 +8,7 @@ function SearchPokemon({getSearchQuery, getTypeQuery}) {
 
     function handleSearchChange(q) {
         setKeyWord(q);
-        getSearchQuery(q);
+        getSearchQuery(q.toLowerCase());
     }
     function handleTypeChange(q) {
         setTypeFilter(q);
@@ -24,7 +24,7 @@ function SearchPokemon({getSearchQuery, getTypeQuery}) {
         }
     }
     function renderActiveTypeFilter() {
-        if (typeFilter.length > 0) {
+        if (typeFilter.length) {
             return (
                 <div className={`active-type-filter ${typeFilter}`}
                      onClick={() => handleTypeChange("")}
@@ -37,7 +37,7 @@ function SearchPokemon({getSearchQuery, getTypeQuery}) {
         <div className="search-container">
             <input className="search-input"
                    type="text"
-                   placeholder="Search for pokemon..."
+                   placeholder="Search for a pokemon..."
                    value={keyWord}
                    onChange={(event => handleSearchChange(event.target.value))}/>
 
@@ -50,6 +50,14 @@ function SearchPokemon({getSearchQuery, getTypeQuery}) {
                             onClick={(event => handleTypeChange(event.currentTarget.value))}
                     >{type}</button>
                 ))}
+            </div>
+            <div className="type-select-container" >
+                <select onChange={(event => handleTypeChange(event.currentTarget.value))}>
+                    <option className="select-option-header" value="">Select type:</option>
+                    {pokemonTypes.map((type) => (
+                        <option className="select-option" value={type}>{type}</option>
+                    ))}
+                </select>
             </div>
             <div className="active-filters-container">
                 <span className="active-filters-info">Active filters:</span>

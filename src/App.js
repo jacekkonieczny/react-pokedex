@@ -3,13 +3,11 @@ import Footer from "./components/Footer";
 import "./scss/App.scss"
 import PokemonList from "./components/PokemonList";
 
-
 function App() {
   return (
     <div className="App">
         <Header />
         <PokemonList />
-
         <Footer />
     </div>
   );

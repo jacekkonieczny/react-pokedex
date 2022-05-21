@@ -12,7 +12,7 @@ function PokemonList() {
 
     useEffect(() => {
         async function fetchData() {
-            let response = await getAllPokemon(initialUrl)
+            const response = await getAllPokemon(initialUrl)
             await loadPokemon(response.results);
             setLoading(false);
         }
@@ -21,8 +21,7 @@ function PokemonList() {
 
     async function loadPokemon(data) {
         let pokemonArray = await Promise.all(data.map(async pokemon => {
-            let allPokemon = await getPokemon(pokemon.url);
-            return allPokemon;
+            return await getPokemon(pokemon.url);
         }))
         setPokemonData(pokemonArray);
     }
@@ -40,7 +39,7 @@ function PokemonList() {
                 return;
             }
 
-            pokemonList.push(<PokemonCard key={pokemon.id} pokemon={pokemon} />);
+            pokemonList.push(<PokemonCard key={pokemon.name} pokemon={pokemon} />);
         });
 
         return pokemonList;

@@ -11,11 +11,9 @@ function PokemonCard({pokemon}) {
             <div className="pokemon-information">
                 <span className="name-information">{pokemon.name}</span>
                 <div className="types-information">
-                    {pokemon.types.map(type => {
-                        return (
+                    {pokemon.types.map(type => (
                             <div className={`${type.type.name} type`} >{type.type.name}</div>
-                        )
-                    })}
+                        ))}
                 </div>
             </div>
         </Link>

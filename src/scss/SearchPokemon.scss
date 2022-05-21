@@ -5,6 +5,10 @@
   gap: 2rem;
   padding: 2rem 10rem;
 
+  @media only screen and (max-width: 768px) {
+    padding: 2rem 2rem;
+  }
+
   .search-info {
     width: 100%;
     text-align: center;
@@ -32,11 +36,16 @@
     }
   }
 
+
   .type-button-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
 
     .filter-button {
       height: 2.5rem;
@@ -54,6 +63,27 @@
       cursor: pointer;
     }
 
+  }
+
+  .type-select-container {
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: 768px) {
+      display: flex;
+    }
+
+    select {
+      width: 100%;
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+
+      .select-option {
+        text-transform: uppercase;
+      }
+    }
   }
 
   .active-filters-container {
