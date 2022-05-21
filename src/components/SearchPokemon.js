@@ -52,10 +52,10 @@ function SearchPokemon({getSearchQuery, getTypeQuery}) {
                 ))}
             </div>
             <div className="type-select-container" >
-                <select>
-                    <option className="select-option">Select type:</option>
+                <select onChange={(event => handleTypeChange(event.currentTarget.value))}>
+                    <option className="select-option-header" value="">Select type:</option>
                     {pokemonTypes.map((type) => (
-                        <option className="select-option">{type}</option>
+                        <option className="select-option" value={type}>{type}</option>
                     ))}
                 </select>
             </div>
