@@ -51,6 +51,14 @@ function SearchPokemon({getSearchQuery, getTypeQuery}) {
                     >{type}</button>
                 ))}
             </div>
+            <div className="type-select-container" >
+                <select>
+                    <option className="select-option">Select type:</option>
+                    {pokemonTypes.map((type) => (
+                        <option className="select-option">{type}</option>
+                    ))}
+                </select>
+            </div>
             <div className="active-filters-container">
                 <span className="active-filters-info">Active filters:</span>
                 {renderActiveSearchFilter()}
