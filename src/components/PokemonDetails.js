@@ -20,7 +20,7 @@ function PokemonDetails() {
     }, [])
 
     return (
-        <>
+        <div className="pokemon-details-container">
             <Header />
             {loading ? <h1>Loading</h1> : (
             <div className="pokemon-details">
@@ -31,9 +31,11 @@ function PokemonDetails() {
                     <span>WEIGHT: {pokemonData.weight}</span>
                     <div className="pokemon-abilities">
                         <span>ABILITIES:</span>
-                        {pokemonData.abilities.map(ability => (
-                            <div className={`ability-info ${pokemonData.types[0].type.name}`} >{ability.ability.name}</div>
-                        ))}
+                        <div className="ability-info-container">
+                            {pokemonData.abilities.map(ability => (
+                                <div className={`ability-info ${pokemonData.types[0].type.name}`} >{ability.ability.name}</div>
+                            ))}
+                        </div>
                     </div>
                     <div className="pokemon-types">
                         <span>TYPES:</span>
@@ -59,7 +61,7 @@ function PokemonDetails() {
             </div>
                 )}
             <Footer />
-        </>
+        </div>
     );
 }
 
