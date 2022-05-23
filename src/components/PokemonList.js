@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {getAllPokemon, getPokemon} from "../services/api";
 import PokemonCard from "./PokemonCard";
 import SearchPokemon from "./SearchPokemon";
+import LoadingSpinner from "./LoadingSpinner";
 
 function PokemonList() {
     const [pokemonData, setPokemonData] = useState([]);
@@ -49,7 +50,7 @@ function PokemonList() {
         <>
             <SearchPokemon getTypeQuery={(q) => setTypeQuery(q)} getSearchQuery={(q) => setSearchQuery(q)}/>
             <div className="pokemon-list">
-                {loading ? <h1>Loading</h1> :
+                {loading ? <LoadingSpinner /> :
                 renderPokemonList()}
             </div>
         </>
