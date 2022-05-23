@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import Header from "./Header";
 import {getPokemon} from "../services/api";
 import Footer from "./Footer";
+import LoadingSpinner from "./LoadingSpinner";
 
 function PokemonDetails() {
     let {pokemonId} = useParams();
@@ -22,7 +23,7 @@ function PokemonDetails() {
     return (
         <div className="pokemon-details-container">
             <Header />
-            {loading ? <h1>Loading</h1> : (
+            {loading ? <LoadingSpinner /> : (
             <div className="pokemon-details">
                 <div className="pokemon-info-section">
                     <span>NAME: {pokemonData.name}</span>
