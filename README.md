@@ -13,4 +13,4 @@
 ## **The main goal of this project was to practice:**
 - **React**
 - **React Router**
-- **interaction with API**
+- **Interaction with API**
